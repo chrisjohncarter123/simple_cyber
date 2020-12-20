@@ -5,33 +5,53 @@
 <h1>Web Application Attacks</h1>
 # Web Application Attacks
 
-Introduction
+<h1>Introduction</h1>
 
+<p>
 There are many known ways for attacks exploit a web application. New strategies are constantly being developed, and large breaches are being executed by attackers worldwide. In fact, “The 2020 Verizon Data Breach Investigations Report (DBIR) confirms that this is the case: 43% of data breaches are tied to web application vulnerabilities—which more than doubled year over year” (Spencer, 2020). Protecting against even a single type of attack can be difficult - so protecting against many types of attacks can be much more difficult. There are currently many advanced tools for many types of attacks, and they are quickly growing in features. Some of the most dangerous web application attacks include SQL injection, cross-site scripting, command injection, and cross-site request forgery. 
-	
-Method: SQL Injection
+</p>
 
+<h2>
+Method: SQL Injection
+</h2>
+
+<p>
 SQL Injection is a very common type of web application attack. Injection attacks are listed as the number one web application security risk, and SQL injection is one of the most common type of injection attacks. SQL is usually used to manipulate data in a database and is a very common language used by developers. SQL injection works by adding malicious SQL code to the target database. This gives attackers strong control over the target database. The following is an example of a SQL injection attack:
 SELECT * FROM tablename WHERE UserID= 2302
 becomes the following with a simple SQL injection attack:
 SELECT * FROM tablename WHERE UserID= 2302 OR 1=1”  (Gregg & Santos, 2020)
 The “OR 1=1” was maliciously added by the attacker. It will always evaluate to true, so the query will return the results of the query, ignoring the requirement in the WHERE clause of the UserID of 2302.
-	
-SQL Injection Tools
-BSQL hacker - “a nice SQL injection tool that helps you perform a SQL injection attack against web applications. This tool is for those who want an automatic SQL injection tool. It is especially made for Blind SQL injection. This tool is fast and performs a multi-threaded attack for better and faster results.”
-SQLMap - “the open source SQL injection tool and most popular among all SQL injection tools available. This tool makes it easy to exploit the SQL injection vulnerability of a web application and take over the database server. It comes with a powerful detection engine which can easily detect most of the SQL injection related vulnerabilities.”
-SQLninja - “a SQL injection tool that exploits web applications that use a SQL server as a database server. This tool may not find the injection place at first. But if it is discovered, it can easily automate the exploitation process and extract the information from the database server.”
-Safe3 SQL injector - “is another powerful but easy to use SQL injection tool. Like other SQL injection tools, it also makes the SQL injection process automatic and helps attackers in gaining the access to a remote SQL server by exploiting the SQL injection vulnerability. It has a powerful AI system which easily recognizes the database server, injection type and best way to exploit the vulnerability” (Shankdhar, 2019).
+</p>
 
+<h3>
+SQL Injection Tools
+</h3>
+
+<p>
+<em>BSQL hacker - </em>“a nice SQL injection tool that helps you perform a SQL injection attack against web applications. This tool is for those who want an automatic SQL injection tool. It is especially made for Blind SQL injection. This tool is fast and performs a multi-threaded attack for better and faster results.”
+<em>SQLMap - </em>“the open source SQL injection tool and most popular among all SQL injection tools available. This tool makes it easy to exploit the SQL injection vulnerability of a web application and take over the database server. It comes with a powerful detection engine which can easily detect most of the SQL injection related vulnerabilities.”
+<em>SQLninja - </em>“a SQL injection tool that exploits web applications that use a SQL server as a database server. This tool may not find the injection place at first. But if it is discovered, it can easily automate the exploitation process and extract the information from the database server.”
+<em>Safe3 SQL injector - </em>“is another powerful but easy to use SQL injection tool. Like other SQL injection tools, it also makes the SQL injection process automatic and helps attackers in gaining the access to a remote SQL server by exploiting the SQL injection vulnerability. It has a powerful AI system which easily recognizes the database server, injection type and best way to exploit the vulnerability” (Shankdhar, 2019).
+</p>
+
+<h3>
 SQL Injection Countermeasures
+</h3>
+<p>
 	One of the first countermeasure is to filter all input before it is entered into SQL queries. This should be applied to all types of input, including drop-down boxes and radio buttons, not only text boxes. However, this in itself is not enough to provide sufficient protection against more advanced SQL injection attacks because it does not solve the deeper problem. Therefore, there are many other mitigation strategies that web applications must implement.
 	Patches and updates must be applied to all software packages, libraries, operating systems, plug-ins, web server software, and any other component used in the development of the web application. The principle of least privilege should be used when generating new user accounts, so more power is only granted to those who need it. If a web application only requires a SELECT statement, only grant it usage to SELECT statements and no other types of statements. Databases should not be shared between web applications (How to Protect Against SQL Injection Attacks).
-	
-Method: Cross-Site Scripting (XSS)
+</p>
 
+<h2>
+Method: Cross-Site Scripting (XSS)
+</h2>
+<p>
 	Like SQL injection, Cross-Site Scripting is also one of the most common types of web application attacks. “Hackers inject malicious scripts in trusted websites to harm both the website and its visitors” (Alexander). “Cross-site scripting ('XSS' or 'CSS') attacks exploit vulnerabilities in dynamically generated web pages, which enables malicious attackers to inject client-side script into web pages viewed by other users. It occurs when invalidated input data is included in dynamic content that is sent to a user's web browser for rendering. Attackers inject malicious JavaScript, VBScript, ActiveX, HTML, or Flash for execution on a victim's system by hiding it within legitimate requests. Attackers bypass client-ID security mechanisms and gain access privileges, and then inject malicious scripts into specific web pages. These malicious scripts can even rewrite HTML website content.” (Gregg & Santos, 2020)
-	
+</p>
+<h3>
 Cross-Site Scripting  Tools
+</h3>
+
 Find XSS - “If you seek a simple project-based tool that will help find cross-site scripting problems across a website or a PHP project, Find XSS is one of the most trusted tools that you’d find. Their website offers a detailed explanation of how to get started.”
 XSS Mister Scanner - “tests your website for even the deep-seeded issues including the ones in your header, which seemingly look benign. Other that that, this scanner is capable of testing for every other server and OWASP issue including SQL Injection, Caching loopholes, and Cross-site Request Forgery.”
 Quttera - “When it comes to detecting Cross-Site Scripting, Quttera is one of the best online testing tools in the market. Although it is not restricted to one vulnerability detection, you can use it the way you like it.”
